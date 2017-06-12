@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h3 class="text-center">
+    Bienvenue sur mon humble blog, où vous aurez à disposition mon prochain roman
+</h3>
+<br>
+<h5 class="text-center">
+    Vos avis seront appréciés dans les commentaires et rappelez vous que la courtoisie est souvent bien acceuillie.
+</h5>
+
+
+{% for article in articles %}
+
+
+{% if loop.last %}
+   {{ article.id }} <br>
+    {{ article.title }}<br>
+    {{ article.content }}<br>
+    {{ article.date.date|date('d/m/Y') }}<br>
+
+    <br>
+    <br>
+{% endif %}
+    {% endfor %}
+
+
+{% endblock %}
